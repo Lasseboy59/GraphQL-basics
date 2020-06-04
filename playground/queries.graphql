@@ -44,3 +44,19 @@ mutation {
     firstName
   }
 }
+
+mutation {
+  editUser(userId: "41", age: 60, firstName: "Lauri", companyId: "1") {
+    id
+    firstName
+    age
+  }
+}
+
+
+mutation {
+  editUser(id: "23", age: 32) {
+    id
+    firstName
+  }
+}
