@@ -30,3 +30,17 @@ fragment companyDetails on Company {
   description
 }
 
+mutation {
+  addUser(firstName:"Lasse", age: 35) {
+    id
+    firstName
+    age
+  }
+}
+
+mutation {
+	deleteUser(userId: "41"){
+    id
+    firstName
+  }
+}

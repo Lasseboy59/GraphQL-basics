@@ -78,6 +78,16 @@ const mutation = new GraphQLObjectType({
         return axios.post('http://localhost:3000/users', { firstName, age, companyId })
           .then(response => (response.data))
       }
+    },
+    deleteUser: {
+      type: UserType,
+      args: {
+        userId: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parentValue, { userId }) {
+        return axios.delete(`http://localhost:3000/users/${userId}`)
+          .then(response => (response.data))
+      }
     }
   }
 })
